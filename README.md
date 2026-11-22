@@ -1,10 +1,10 @@
 Sistema web containerizado para gerenciamento de cardápio, controle transacional de estoque, pedidos com carrinho de múltiplos itens e painel administrativo (ADM) da cantina escolar, implantado em ambiente de produção com Docker e Docker Compose.
 
-Equipe Técnica (Implantação): Thaylla, Naiara e Carolina
+Equipe Técnica (Implantação): Carolina
 
 Versão Implantada: v1.0.0
 
-Repositório Oficial: https://github.com/thaynordt/estulanches
+Repositório Oficial: https://github.com/carolinajung-glitch/estulanches
 
 Vídeo de Apresentação (2 a 5 min): [Cole aqui o link do vídeo no YouTube ou Google Drive]
 
@@ -36,7 +36,7 @@ Como Executar o Projeto (Passo a Passo no Terminal)
 
 1. Clonar o repositório e acessar a pasta
 
-git clone https://github.com/thaynordt/estulanches.git
+git clone https://github.com/carolinajung-glitch/estulanches
 cd estulanches
 
 
