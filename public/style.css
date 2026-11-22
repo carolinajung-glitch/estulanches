@@ -1,0 +1,108 @@
+:root{
+  --vermelho:#EA1D2C; --tinta:#3E3E3E; --mudo:#717171; --borda:#E6E6E6; --fundo:#F7F7F7; --branco:#fff;
+  --corpo:"Nunito Sans","Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--tinta);font-family:var(--corpo);line-height:1.45;background:var(--fundo)}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--vermelho);outline-offset:2px}
+[hidden]{display:none!important}
+
+.topo{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;
+  background:var(--branco);border-bottom:1px solid var(--borda);padding:0 max(20px,calc((100vw - 1120px)/2))}
+.marca{margin:0;font-size:1.5rem;font-weight:800;color:var(--vermelho);letter-spacing:-.02em;padding:14px 0}
+.abas{display:flex;gap:24px}
+.aba{border:0;background:none;padding:20px 2px 17px;font-weight:600;color:var(--mudo);cursor:pointer;border-bottom:3px solid transparent}
+.aba[aria-selected="true"]{color:var(--tinta);border-bottom-color:var(--vermelho)}
+main{max-width:1120px;margin:0 auto;padding:32px 20px 60px}
+main.aluno:not([hidden]){display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:start}
+
+.titulo-secao{font-size:1.4rem;font-weight:700;margin:0 0 18px}
+.titulo-secao.pequeno{font-size:1.1rem}
+
+/* grupos do cardápio */
+.menu{display:flex;flex-direction:column;gap:20px}
+.grupo,.ticket,.porta,.coluna{background:var(--branco);border:1px solid var(--borda);border-radius:12px}
+.grupo{padding:22px 24px 10px}
+.grupo h3{margin:0;font-size:1.05rem;font-weight:700}
+.grupo .sub{margin:2px 0 14px;font-size:.8rem;color:var(--mudo)}
+.grupo-itens{list-style:none;margin:0;padding:0}
+.prato{display:grid;grid-template-columns:72px 1fr auto auto;align-items:center;gap:16px;padding:12px 0;border-top:1px solid var(--borda)}
+.prato:first-child{border-top:0}
+.foto{width:72px;height:72px;border:1px solid var(--borda);border-radius:10px;background:var(--branco);display:grid;place-items:center;font-size:2rem;overflow:hidden}
+.foto img{width:100%;height:100%;object-fit:contain;padding:4px}
+.info{display:flex;flex-direction:column;min-width:0}
+.info strong{font-weight:600}
+.resta{font-size:.8rem;color:var(--vermelho)}
+.prato.esgotado .foto,.prato.esgotado .info strong{opacity:.45}
+.preco{display:inline-flex;height:44px;border:1px solid var(--borda);border-radius:8px;overflow:hidden;font-size:.95rem}
+.preco i{font-style:normal;display:grid;place-items:center;padding:0 12px;background:var(--fundo);color:var(--mudo);border-right:1px solid var(--borda)}
+.preco b{display:grid;place-items:center;padding:0 14px;min-width:64px;font-weight:600}
+.passo{display:flex;align-items:center;height:44px;border:1px solid var(--borda);border-radius:8px;background:var(--branco)}
+.passo button{width:40px;height:100%;border:0;background:none;font-size:1.4rem;cursor:pointer;color:var(--tinta)}
+.passo button:disabled{color:#BDBDBD;cursor:not-allowed}
+.passo output{min-width:2ch;text-align:center;font-weight:700}
+
+/* comanda */
+.lado{position:sticky;top:16px;display:flex;flex-direction:column;gap:24px}
+.ticket{padding:22px 24px}
+.ticket-titulo{margin:0 0 14px;font-size:1.15rem;font-weight:700}
+.ticket label,.porta label{display:block;font-size:.85rem;font-weight:600;color:var(--mudo);margin-bottom:12px}
+.ticket input,.porta input{display:block;width:100%;height:44px;margin-top:4px;padding:0 12px;background:var(--branco);
+  border:1px solid var(--borda);border-radius:8px;color:var(--tinta)}
+.ticket input:focus,.porta input:focus{border-color:var(--vermelho);outline:0}
+.linhas{list-style:none;margin:16px 0 0;padding:0;border-top:1px solid var(--borda)}
+.linhas li{display:flex;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px solid var(--borda);font-size:.95rem}
+.linhas .vazio{color:var(--mudo);justify-content:center}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin:14px 0 4px;font-weight:600}
+.total strong{font-size:1.4rem}
+.aviso{min-height:1.3em;margin:4px 0 10px;font-size:.85rem;font-weight:600;color:var(--vermelho)}
+.btn-principal{width:100%;height:48px;border:0;border-radius:8px;background:var(--vermelho);color:var(--branco);font-weight:700;font-size:1rem;cursor:pointer}
+.btn-principal:hover:not(:disabled){background:#D01A27}
+.btn-principal:disabled{background:#E6E6E6;color:#A0A0A0;cursor:not-allowed}
+
+/* status */
+.lista-meus,.estoque{list-style:none;margin:0;padding:0}
+.lista-meus{display:flex;flex-direction:column;gap:12px}
+.lista-meus li{background:var(--branco);border:1px solid var(--borda);border-radius:12px;padding:14px 16px}
+.chip{display:inline-block;padding:2px 10px;border-radius:999px;font-size:.75rem;font-weight:700}
+.PENDENTE{background:#FFF3D6;color:#8A5A00} .ACEITO{background:#E6EEFF;color:#2A4DB0}
+.ENTREGUE{background:#DDF5E7;color:#14753B} .RECUSADO{background:#FDE3E5;color:#B3121F}
+.meu-topo{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;font-weight:700}
+.meu-itens{margin:0;font-size:.9rem;color:var(--mudo)}
+
+/* cozinha */
+.porta{max-width:360px;margin:30px auto;padding:24px}
+.estoque{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+.estoque li{display:flex;align-items:center;gap:10px;background:var(--branco);border:1px solid var(--borda);border-radius:8px;padding:6px 6px 6px 14px;font-weight:600;font-size:.9rem}
+.estoque li.baixo{border-color:var(--vermelho);color:var(--vermelho)}
+.estoque button{border:1px solid var(--borda);background:var(--fundo);border-radius:6px;padding:5px 10px;font-weight:700;cursor:pointer}
+.quadro{display:grid;grid-template-columns:repeat(4,minmax(220px,1fr));gap:16px;overflow-x:auto;padding-bottom:10px}
+.coluna{padding:14px;min-height:200px;background:#FBFBFB}
+.coluna h3{margin:0 0 12px;font-size:1rem;display:flex;justify-content:space-between;align-items:center}
+.coluna ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.cartao{background:var(--branco);border:1px solid var(--borda);border-radius:10px;padding:12px 14px}
+.cartao .quem{font-weight:700}
+.cartao .turma{font-size:.85rem;color:var(--mudo)}
+.cartao ul{gap:2px;margin:10px 0;font-size:.92rem}
+.acoes{display:flex;gap:8px}
+.acoes button{flex:1;height:38px;border:0;border-radius:8px;font-weight:700;cursor:pointer;background:var(--vermelho);color:var(--branco)}
+.acoes .recusar{background:var(--branco);color:var(--vermelho);border:1px solid var(--borda)}
+.vazio-col{color:var(--mudo);font-size:.9rem}
+.sair{margin-top:30px;background:none;border:0;text-decoration:underline;cursor:pointer;font-weight:600;color:var(--mudo)}
+
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,120px);background:var(--tinta);color:var(--branco);
+  padding:12px 20px;border-radius:8px;font-weight:600;transition:transform .25s;max-width:90vw;z-index:9}
+.toast.on{transform:translate(-50%,0)}
+
+@media (max-width:860px){
+  main.aluno:not([hidden]){grid-template-columns:1fr}
+  .lado{position:static}
+  .quadro{grid-template-columns:repeat(4,240px)}
+}
+@media (max-width:560px){
+  .prato{grid-template-columns:72px 1fr auto}
+  .prato .preco{grid-column:2;justify-self:start;height:36px}
+  .prato .passo{grid-column:3;grid-row:1/3}
+}
+@media (prefers-reduced-motion:reduce){.toast{transition:none}}
