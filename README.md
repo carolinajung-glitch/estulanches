@@ -6,7 +6,7 @@ Versão Implantada: v1.0.0
 
 Repositório Oficial: https://github.com/carolinajung-glitch/estulanches
 
-Vídeo de Apresentação (2 a 5 min): [Cole aqui o link do vídeo no YouTube ou Google Drive]
+Vídeo de Apresentação (2 a 5 min): https://youtu.be/-0B6qvBv-20?feature=shared
 
 Entregáveis da Atividade
 
